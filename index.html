@@ -22,13 +22,10 @@
             <div class="collapse navbar-collapse " id="mynavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">GitHub</a>
+                        <a class="nav-link" href="https://github.com/ec2003">GitHub</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Link</a>
+                        <a class="nav-link" href="https://github.com/ec2003/ec2003.github.io">Source Code</a>
                     </li>
                 </ul>
                 <!-- <form class="d-flex">
@@ -38,11 +35,14 @@
             </div>
         </div>
     </nav>
+    
     <div class="container mt-4" style="padding-top: 60px;">
-        <h1>My First Bootstrap Page</h1>
+        <h1>I hate django</h1>
         <p>This part is inside a .container class.</p>
         <p>The .container class provides a responsive fixed width container.</p>
     </div>
+
+    
     <!-- Nav tabs -->
 <div class="container">
     <ul class="nav nav-tabs">
@@ -61,9 +61,22 @@
   
   <!-- Tab panes -->
   <div class="tab-content">
-    <div class="tab-pane container active" id="home">...</div>
+    <div class="tab-pane container active" id="home">
+        <button onclick="renderHTML()" class="btn btn-primary">Render HTML</button>
+        <div id="target"></div>
+    </div>
     <div class="tab-pane container fade" id="menu1">...</div>
     <div class="tab-pane container fade" id="menu2">...</div>
   </div>
 </body>
+<script>
+    function renderHTML() {
+      const targetDiv = document.getElementById('target');
+      const newHTML = `
+        <h2>Dynamically Rendered Content</h2>
+        <p>This content is added after the button click.</p>
+      `;
+      targetDiv.innerHTML = newHTML;
+    }
+  </script>
 </html>

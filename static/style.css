@@ -2,6 +2,9 @@
     font-family: Bahnschrift;
     src: url('font/BAHNSCHRIFT.TTF');
 }
+:root {
+    --disabled-color: darkgray;
+}
 * {
     padding: 0;
 }
@@ -15,4 +18,11 @@ body {
 }
 #home-nav {
     max-height: 48px;
+}
+.btn:disabled, fieldset:disabled .btn {
+    color: var(--bs-btn-disabled-color);
+    pointer-events: none;
+    background-color: var(--disabled-color);
+    border-color: var(--disabled-color);
+    opacity: var(--bs-btn-disabled-opacity);
 }

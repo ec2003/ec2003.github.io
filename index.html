@@ -8,8 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- CSS CONFIG -->
     <link rel="stylesheet" href="static/style.css">
-    <!-- JS SCRIPT -->
-    <script type="text/javascript" src="js/home.js" defer></script>
     <title>Home Page</title>
 </head>
 <body>
@@ -37,12 +35,9 @@
     </nav>
     
     <div class="container mt-4" style="padding-top: 60px;">
-        <h1>I hate django</h1>
-        <p>This part is inside a .container class.</p>
-        <p>The .container class provides a responsive fixed width container.</p>
+        <h1>Home Page - UNDER CONSTRUCTION</h1>
     </div>
 
-    
     <!-- Nav tabs -->
 <div class="container">
     <ul class="nav nav-tabs">
@@ -65,8 +60,19 @@
         <button onclick="renderHTML()" class="btn btn-primary">Render HTML</button>
         <div id="target"></div>
     </div>
-    <div class="tab-pane container fade" id="menu1">...</div>
-    <div class="tab-pane container fade" id="menu2">...</div>
+    <div class="tab-pane container fade" id="menu1">
+      <div class="d-grid gap-3">
+          <div class="d-flex justify-content-center" style="padding-top: 20px;">
+              <button onclick="startGame(); disableButton('startGameButton')" class="btn btn-primary" id="startGameButton">Render Game</button>
+          </div>
+          <div class="d-flex justify-content-center">
+              <canvas id="game" width="480" height="270" style="background-color: darkgray;"></canvas>
+          </div>
+      </div>
+  </div>
+    <div class="tab-pane container fade" id="menu2">
+      <div id="content"></div>
+    </div>
   </div>
 </body>
 <script>
@@ -78,5 +84,15 @@
       `;
       targetDiv.innerHTML = newHTML;
     }
+    function selfDestruct(button) {
+      button.parentNode.removeChild(button);
+    }
+    function disableButton(buttonId) {
+      const button = document.getElementById(buttonId);
+      button.disabled = true
+      button.classList.add('disabled-button');
+    }
   </script>
+  <!-- JS SCRIPT -->
+  <script src="js/home.js"></script>
 </html>
